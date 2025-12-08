@@ -3,6 +3,22 @@ for num in range(6, 20):  # Loop from 6 to 19
     square = num ** 2     # Calculate the square of the current number
     print(f"Square of {num} is {square}")
 
+output : 
+Square of 6 is 36
+Square of 7 is 49
+Square of 8 is 64
+Square of 9 is 81
+Square of 10 is 100
+Square of 11 is 121
+Square of 12 is 144
+Square of 13 is 169
+Square of 14 is 196
+Square of 15 is 225
+Square of 16 is 256
+Square of 17 is 289
+Square of 18 is 324
+Square of 19 is 361
+
 # Task 2: Define a function to check grades
 def check_grades(grades):
     """
@@ -19,6 +35,12 @@ def check_grades(grades):
 grades_list = [90, 78, 85, 60, 92]  # Sample grades
 check_grades(grades_list)  # Call the function with the sample list
 
+output : 
+90: Pass
+78: Try again
+85: Pass
+60: Try again
+92: Pass
 
 # Task 3: Count vowels in a string
 def count_vowels(text):
@@ -44,6 +66,14 @@ def count_vowels(text):
 text = "Data science is the civil engineering of data.  Cathy O’Neil & Rachel Schutt"
 count_vowels(text)  # Call the function
 
+output :
+Total vowels: 24
+a: 6
+e: 8
+i: 7
+o: 2
+u: 1
+
 
 # Task 4: Collect numbers from the user and calculate total and average
 numbers = []  # Initialize empty list to store numbers
@@ -65,6 +95,18 @@ if numbers:  # Check if the list is not empty
 else:
     print("No numbers were entered.")  # If list is empty
 
+output :
+Enter a number (or 'done' to finish):
+Invalid input. Try again.
+Enter a number (or 'done' to finish): 
+Invalid input. Try again.
+Enter a number (or 'done' to finish): 2
+Enter a number (or 'done' to finish): 3
+Enter a number (or 'done' to finish): 8
+Enter a number (or 'done' to finish): done
+Total values entered: 3
+Average: 4.33
+
 
 # Task 5: Calculate total purchases per customer
 purchases = [("Alice", 120), ("Bob", 80), ("Alice", 50), ("Bob", 20), ("Clara", 200)]
@@ -79,3 +121,84 @@ for name, amount in purchases:  # Loop through each purchase
 # Print total spent per customer
 for customer, total in total_per_customer.items():
     print(f"{customer} spent ${total}")
+
+output :
+Alice spent $170
+Bob spent $100
+Clara spent $200
+
+Task 6:
+
+import requests  # Used to call the World Bank API
+
+# Loop through years 2010 to 2020
+for year in range(2010, 2021):
+
+    # Build API URL for each year
+    url = f"https://api.worldbank.org/v2/country/RO/indicator/SP.POP.TOTL?format=json&date={year}"
+
+    # Send request to World Bank API
+    response = requests.get(url)
+
+    # Convert JSON response to Python data structure
+    data = response.json()
+
+    # Extract population value from JSON
+    population = data[1][0]["value"]
+
+    # Print results in clean format
+    print("Country: Tuvalu")
+    print("Year:", year)
+    print("Population:", population)
+    print("---------------------------")
+
+
+
+output :
+
+Country: Tuvalu
+Year: 2010
+Population: 20246871
+---------------------------
+Country: Tuvalu
+Year: 2011
+Population: 20147528
+---------------------------
+Country: Tuvalu
+Year: 2012
+Population: 20058035
+---------------------------
+Country: Tuvalu
+Year: 2013
+Population: 19983693
+---------------------------
+Country: Tuvalu
+Year: 2014
+Population: 19908979
+---------------------------
+Country: Tuvalu
+Year: 2015
+Population: 19815616
+---------------------------
+Country: Tuvalu
+Year: 2016
+Population: 19702267
+---------------------------
+Country: Tuvalu
+Year: 2017
+Population: 19588715
+---------------------------
+Country: Tuvalu
+Year: 2018
+Population: 19473970
+---------------------------
+Country: Tuvalu
+Year: 2019
+Population: 19371648
+---------------------------
+Country: Tuvalu
+Year: 2020
+Population: 19265250
+---------------------------
+
+
